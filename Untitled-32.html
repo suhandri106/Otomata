@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter a Scientific Number</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 1-50px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Enter a Scientific Number</h2>
+  <label for="numberInput">Input String:</label>
+  <br>
+  <br>
+  <input type="text" id="numberInput">
+  <br>
+  <br>
+  <button onclick="checkScientificNumber()">Check</button>
+  <p id="result"></p>
+  <h1>Suhandri S.(221011060127)</h1>
+
+  <script>
+    function checkScientificNumber() {
+      var input = document.getElementById("numberInput").value;
+      var isScientificNumber = /^[+-]?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i.test(input);
+      var resultElement = document.getElementById("result");
+      if (isScientificNumber) {
+        resultElement.textContent = "Yes, it is a scientific number.";
+      } else {
+        resultElement.textContent = "No, it is not a scientific number.";
+      }
+    }
+  </script>
+</body>
+</html>
+
